@@ -1,0 +1,112 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.hero{
+    all:initial;
+}
+.imageHolder{
+    position: relative;
+    /* transform-origin: top; */
+    height: 525px;
+    
+}
+
+#img1{
+    position: absolute;
+    bottom: 0px;
+}
+#img2{
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+
+.hero:hover>#img2{
+    transform: scale(1.5);
+    transition: 2s;
+    bottom: 0px;
+}
+.hero:not(:hover)>#img2{
+    transform: scale(1);
+    transition: 2s;
+    bottom: 0px;
+}
+.hero:hover #img1{
+    transform: scale(0.95);
+    transition: 2s;
+    bottom: 0px;
+
+}
+.hero:not(:hover) #img1{
+    transform: scale(1);
+    transition: 2s;
+    bottom: 0px;
+
+}
+
+.textHolder h1{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 52px;
+line-height: 100%;
+
+
+color: #000000;
+}
+
+.textHolder h2{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 150%;
+/* identical to box height, or 48px */
+
+
+/* black */
+margin: 0;
+color: #000000;
+}
+
+.textHolder p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    width:350px;
+    margin: 0;
+    /* black */
+    
+    color: #000000;
+    
+}
+
+.textHolder{
+    display: flex;
+    flex-direction: column;
+    width: 457px;
+}
+
+
+.hero:hover h1{
+    transition: 2s;
+    transform: scale(1.04);
+}
+.hero:not(:hover) h1{
+    transition: 2s;
+    transform: scale(1);
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 7vh;
+    min-width: 1100px;
+    width: 90vw;
+    margin: auto;
+    flex-wrap: wrap;
+}

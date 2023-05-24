@@ -1,0 +1,9 @@
+.card{
+    width: 450px;
+    height: 260px;
+    margin: 40px;
+    background-color: rgba(0, 0, 0, 0.281);
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
+}

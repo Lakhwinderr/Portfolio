@@ -1,0 +1,16 @@
+.toggle{
+    width:210px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.text{
+    text-align: center;
+}
+.bar{
+    background-color: orangered;
+    height: 2px;
+}
+
+.toggle:hover{
+    cursor: pointer;
+}

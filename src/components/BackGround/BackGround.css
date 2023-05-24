@@ -1,0 +1,6 @@
+.backGround{
+    height:100vh;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+}
