@@ -1,15 +1,16 @@
 
-import Hero from "./components/Hero/Hero";
-import Header from "./components/Header/Header";
-import Work from "./components/Work/Work";
-import BackGround from "./components/BackGround/BackGround";
+import './App.css'
+import Home from './components/Pages/Home';
+import { Route,Routes } from "react-router-dom";
+import Education from './components/Pages/Education';
 function App() {
   return (
     <div >
-      <Header></Header>
-      <BackGround></BackGround>
-      <Hero></Hero>
-      <Work></Work>
+      
+    <Routes>
+      <Route path="/"  element = {<Home/>}></Route>
+      <Route path="/Education"  element = {<Education/>}></Route>
+    </Routes>
     </div>
   );
 }

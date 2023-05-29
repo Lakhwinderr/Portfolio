@@ -4,19 +4,55 @@ header ul{
     margin: auto;
     padding: 0;
     justify-content: center;
+    
 }
 
 header li{
     list-style: none;
+    margin: 7px 0px;
+    padding:1px 10px;
 }
 
 .navItem{
+    font-size: medium;
+    font-weight: 520;
+    text-decoration: none;
     margin: 10px 10px;
-    padding:0 10px;
+    padding:1px 10px;
+    /* z-index: 10; */
+}
+
+header li:hover{
+    transform: scale(1.2);
 }
 .navItem:hover{
-    background-color: rgba(255, 166, 0, 0.616);
+    
     cursor: pointer;
-    text-decoration: underline;
+    text-align: center;
     border-radius: 8px;
-}   
+    
+} 
+
+.first:hover{
+    background-color: rgba(255, 166, 0, 0.616);
+}
+
+.second:hover{
+    background-color: #d6135457 ;
+}
+.third:hover{
+    background-color:#f9482988;
+}
+.fourth:hover{
+    background-color: #fce32ad3;
+}
+.fifth:hover{
+    background-color: #30e3e06c;
+}
+
+header{
+    width:100vw;
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+}
