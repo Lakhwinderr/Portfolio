@@ -21,7 +21,7 @@ const Bar = () => {
 };
 export default function () {
   return (
-    <div className="work">
+    <div className="work" id = "work">
       <Bar />
       <h3>Creating the card.</h3>
       <Card></Card>

@@ -29,10 +29,10 @@ font-size: 52px;
     display: none;
 }
 
-.bar:hover .secondBar {
+.work:hover .secondBar {
     display: flex;
 }
-.bar:hover .secondBar div{
+.work:hover .secondBar div{
     animation: move 6.9s linear;
     animation-iteration-count: infinite;
 }

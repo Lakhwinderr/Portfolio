@@ -1,4 +1,4 @@
-.educationCardContainer{
+.aboutCardContainer{
     /* position: absolute; */
     width: 80%;
     left: 0; 
@@ -13,7 +13,7 @@
     margin-bottom: 100px;
 }
 
-.educationCard{
+.aboutCard{
     background: #FFFFFF;
 /* base */
 
@@ -22,21 +22,21 @@ box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 
     border-radius: 4px;
     margin: 10px;
-    width: 580px;
+    width: 80%;
     box-sizing: border-box;
     padding: 30px;
     /* height: 140px; */
     /* background-color: rgb(231, 225, 225); */
 }
 
-.educationCard h2{
+.aboutCard h2{
     margin: 0;
     font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
 }
 
-.educationCard p{
+.aboutCard p{
     font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
@@ -49,21 +49,8 @@ color: #5C5C5C;
 
 }
 
-.educationCard a{
-    color: black;
-}
-
-.educationCard a:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.educationCard:hover{
+.aboutCard:hover{
+    width:85%;
     transform: scale(1.02);
-    transition: 1s;
-}
-
-.educationCard:not(:hover){
-    transform: scale(1);
     transition: 1s;
 }

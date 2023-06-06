@@ -15,11 +15,12 @@
 #img1{
     position: absolute;
     bottom: 0px;
+    
 }
 #img2{
     position: absolute;
     bottom: 0px;
-    left: 80px;
+    left: 60px;
 }
 
 .hero:hover>#img2{

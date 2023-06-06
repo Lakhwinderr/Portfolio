@@ -13,22 +13,22 @@ export default function Header() {
             </HashLink>
           </li>
           <li>
-            <HashLink to="/Education" className="navItem second">
+            <HashLink smooth to="/#work" className="navItem second">
               Work
             </HashLink>
           </li>
           <li>
-            <HashLink to="/Education" className="navItem third">
+            <HashLink  to="/Education" className="navItem third">
               Education
             </HashLink>
           </li>
           <li>
-            <HashLink to="/Education" className="navItem fourth">
+            <HashLink to="/About" className="navItem fourth">
               About
             </HashLink>
           </li>
           <li>
-            <HashLink to="/Education" className="navItem fifth">
+            <HashLink to="/Contact" className="navItem fifth">
               Contact
             </HashLink>
           </li>
