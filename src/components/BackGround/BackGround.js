@@ -12,7 +12,6 @@ export default function BackGround({headerDiv, heroDiv}) {
                     backgroundColor: `${colors[(j)]}`
                 }
                 
-                console.log(divStyle)
                 let myClass = null;
                 if(k%2 === 0){
                     myClass = "two"
@@ -42,7 +41,6 @@ export default function BackGround({headerDiv, heroDiv}) {
                     backgroundColor: `${colors[(j)]}`
                 }
                 
-                console.log(divStyle)
                 let myClass = null;
                 if(k%2 === 0){
                     myClass = "twoR"
