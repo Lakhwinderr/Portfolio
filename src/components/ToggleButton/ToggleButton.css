@@ -1,12 +1,16 @@
 .toggle{
+    margin: auto;
     width:210px;
+    height: 30px;
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-bottom: 10px;
 }
-.text{
+.toggletext{
     text-align: center;
+    color: black;
 }
-.bar{
+.togglebar{
     background-color: orangered;
     height: 2px;
 }

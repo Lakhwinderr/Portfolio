@@ -1,23 +1,25 @@
-* {box-sizing:border-box}
-.holder{
-    height: 100vh;
-text-align: center;
+* {
+  box-sizing: border-box;
 }
-.holder img{
-   width: 80%;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 50px;
+.holder {
+  height: 100vh;
+  text-align: center;
 }
-
+.holder img {
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 50px;
+  border-radius: 4px;
+}
 
 /* Hide the images by default */
 
-
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
-  
-background-color: rgba(255, 166, 0, 0.658);
+
+  background-color: rgba(255, 166, 0, 0.658);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -35,17 +37,18 @@ background-color: rgba(255, 166, 0, 0.658);
 
 /* Position the "next button" to the right */
 
-.arrows{
-    display: flex;
-    margin: auto;
-    margin-top: 50px;
-    width: 200px;
-    justify-content: space-around;
-    margin-bottom: 30px;
+.arrows {
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  width: 200px;
+  justify-content: space-around;
+  margin-bottom: 30px;
 }
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    color: white;
+.prev:hover,
+.next:hover {
+  color: white;
   background-color: brown;
   border-radius: 50%;
 }
@@ -72,7 +75,7 @@ background-color: rgba(255, 166, 0, 0.658);
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
+  /* cursor: pointer; */
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -81,19 +84,19 @@ background-color: rgba(255, 166, 0, 0.658);
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-.dotAndImage{
-    
-    position: relative;
+.dotAndImage {
+  position: relative;
 }
 .dots {
-    margin-top: 20px;
-    position:absolute;
-    left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  margin-top: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -104,6 +107,10 @@ background-color: rgba(255, 166, 0, 0.658);
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }

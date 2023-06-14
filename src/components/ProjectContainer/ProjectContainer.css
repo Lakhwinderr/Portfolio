@@ -1,0 +1,15 @@
+.projectContainer{
+    margin: auto;
+    width: 80%;
+    background-color: aqua;
+    height: 500px;
+    transition: background-color 0.6s ease;
+}
+.secondContainer{
+    background-color: orange;
+}
+.topContainer{
+    width: auto;
+    height: auto;
+    padding-top: 20px;
+}

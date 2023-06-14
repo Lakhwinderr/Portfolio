@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ToggleButton.css'
-export default function ToggleButton() {
-  const [tab, setTab] = useState(1);
+export default function ToggleButton({tab, setTab}) {
+  // const [tab, setTab] = useState(1);
   const clickHandler  = () => {
     if(tab == 1){
       return setTab(2);
@@ -16,10 +16,10 @@ export default function ToggleButton() {
   }
   return (
     <div className="toggle" onClick={clickHandler}>
-        <div className="text">Development</div>
-        <div className="text">Design</div>
+        <div className="toggletext">Development</div>
+        <div className="toggletext">Design</div>
         <div className="holder" style={myStyle}>
-            <div className="bar"></div>
+            <div className="togglebar"></div>
         </div>
     </div>
   )
