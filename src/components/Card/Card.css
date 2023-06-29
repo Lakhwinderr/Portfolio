@@ -14,12 +14,14 @@
     grid-column: 1/-1;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    /* animation: fadeIn 1s ease-in; */
 }
 .backGroundImg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
+    
 }
 .onHover{
     /* position:absolute; */
@@ -30,7 +32,7 @@
 }
 .card:hover .onHover{
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.452);
+    background-color: rgba(0, 0, 0, 0.623);
     color: white;
     grid-row: 1/-2;
     grid-column: 1/-1;
@@ -43,6 +45,12 @@
     animation: fadeIn 1s ease-in;
 }
 
+.card h1, .card p{
+    margin:0;
+}
+.card p{
+    padding: 20px;
+}
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }

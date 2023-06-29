@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import img1 from "../../assets/Design/Homepage.jpg";
-import img2 from "../../assets/Design/Blog Page.jpg";
-import img3 from "../../assets/Design/Post Page.jpg";
 import "./SlideShow.css";
-export default function SlideShow({project}) {
-  const images = project;
+
+export default function SlideShow({item}) {
+  const images = item.array;
   const max = images.length - 1;
 
   const dotArrayClass = [];

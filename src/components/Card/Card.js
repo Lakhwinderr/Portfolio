@@ -1,16 +1,24 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import "./Card.css";
-import project1 from "../../assets/project1.jpg";
-export default function Card() {
+
+
+const updateProject = () => {
+  console.log("clicking the project")
+}
+export default function Card({item}) {
+  const clickHandler = () => {
+    console.log("clicking the card")
+    updateProject(item)
+  }
   return (
-    <div className="card">
+    <div className="card" >
       <div className="backGroundImg">
-        <img src={project1} alt="" />
+        <img src={item.img} alt="image" />
       </div>
 
-      <div className="onHover">
-        <h1>Project Name</h1>
-        <p>Project Description</p>
+      <div className="onHover" onClick={() => clickHandler()}>
+        <h1>{item.title}</h1>
+        <p>{item.description}</p>
       </div>
     </div>
   );

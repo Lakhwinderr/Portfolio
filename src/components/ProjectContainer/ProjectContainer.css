@@ -1,15 +1,20 @@
 .projectContainer{
     margin: auto;
-    width: 80%;
-    background-color: aqua;
-    height: 500px;
-    transition: background-color 0.6s ease;
+    width: 90%;
+    /* background-color: aqua; */
+    height: fit-content;
+    animation: fade 0.6s normal ;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
+
 .secondContainer{
-    background-color: orange;
+    animation: fade 0.6s normal ;
 }
 .topContainer{
     width: auto;
     height: auto;
-    padding-top: 20px;
+    padding-top: 30px;
 }
