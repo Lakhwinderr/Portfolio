@@ -88,7 +88,7 @@
   position: relative;
 }
 .dots {
-  margin-top: 20px;
+  margin-top: 0px;
   position: absolute;
   left: 0;
   right: 0;
@@ -104,6 +104,20 @@
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+
+
+.backButton:hover, a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.linksAndButton{
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
 }
 
 @keyframes fade {

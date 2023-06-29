@@ -38,14 +38,16 @@ export default function ProjectContainer() {
       title: "Little Lemon",
       description:
         "Little Lemon Restaurant website built with React. Fully responsive web app, modern front end application that allows users to reserve a table for the Little Lemon restaurant.",
-      array: devProject1
+      array: devProject1,
+      link: "https://lakhwinderr.github.io/little-lemon/"
       },
     {
       img: project2,
       title: "Lucky Shrubs",
       description:
         "Basic website build using HTML, CSS and JavaScript. Lucky Shrub is a medium-sized garden design firm.",
-      array: devProject2
+      array: devProject2,
+      link:"https://lakhwinderr.github.io/Lucky-Shrubs-Portfolio-Project/"
       },
   ];
 
