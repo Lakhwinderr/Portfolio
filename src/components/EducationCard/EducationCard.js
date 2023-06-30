@@ -7,7 +7,7 @@ export default function EducationCard({data}) {
         <p>
           {education.description}
         </p>
-        <a href="#">View Certification</a>
+        <a href={education.link} target="_blank">View Certification</a>
       </div>
   })
   return (

@@ -5,6 +5,7 @@ import Education from "./components/Pages/Education";
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact";
 import Work from "./components/Pages/Work";
+import ScrollToTop from "./components/ScrollToTop";
 import { ProjectProvider } from "./components/Card/Card";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Work" element={<Work />}></Route>
         </Routes>
+        <ScrollToTop />
       </ProjectProvider>
     </div>
   );

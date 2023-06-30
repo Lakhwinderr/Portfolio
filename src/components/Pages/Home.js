@@ -8,7 +8,10 @@ export default function Home() {
   return (
     <div>
       
-      <BackGround headerDiv={<Header/> } heroDiv = {<Hero/>}></BackGround>
+      <BackGround>
+        <Header></Header>
+        <Hero></Hero>
+      </BackGround>
     <Work/>
     <Footer/>
     </div>
