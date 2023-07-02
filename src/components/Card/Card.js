@@ -27,7 +27,7 @@ export default function Card({ item }) {
     // console.log("clicking the card");
     // console.log(project.project)
     project.setProject(item);
-    navigate("/Work")
+    navigate("/Portfolio/Work")
     
   };
   return (
