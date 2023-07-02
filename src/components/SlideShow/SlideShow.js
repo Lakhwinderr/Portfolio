@@ -62,7 +62,7 @@ export default function SlideShow({ item }) {
   return (
     <div className="holder">
       <div className="linksAndButton">
-        <HashLink smooth to="/#work" className="backButton">
+        <HashLink smooth to="/Portfolio/#work" className="backButton">
           Go Back
         </HashLink>
         <div className="arrows">
