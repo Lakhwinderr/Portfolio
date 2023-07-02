@@ -39,8 +39,8 @@ export default function SlideShow({ item }) {
         return <div className={classes}></div>;
       }),
     ]);
-    console.log(dotArrayClass);
-    console.log(dots);
+    // console.log(dotArrayClass);
+    // console.log(dots);
   }, [current]);
 
   const previous = () => {

@@ -34,27 +34,27 @@ export default function Header() {
         <nav className={toggle ? "active" : null}>
           <ul ref={ref}>
             <li>
-              <Link to="/" className="navItem first" ref={ref}>
+              <Link to="/Portfolio" className="navItem first" ref={ref}>
                 Home
               </Link>
             </li>
             <li>
-              <HashLink smooth to="/#work" className="navItem second">
+              <HashLink smooth to="/Portfolio/#work" className="navItem second">
                 Work
               </HashLink>
             </li>
             <li>
-              <Link to="/Education" className="navItem third">
+              <Link to="/Portfolio/Education" className="navItem third">
                 Education
               </Link>
             </li>
             <li>
-              <Link to="/About" className="navItem fourth">
+              <Link to="/Portfolio/About" className="navItem fourth">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/Contact" className="navItem fifth">
+              <Link to="/Portfolio/Contact" className="navItem fifth">
                 Contact
               </Link>
             </li>
@@ -67,27 +67,27 @@ export default function Header() {
         <nav>
           <ul>
             <li>
-              <HashLink to="/" className="navItem first">
+              <HashLink to="/Portfolio" className="navItem first">
                 Home
               </HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#work" className="navItem second">
+              <HashLink smooth to="/Portfolio/#work" className="navItem second">
                 Work
               </HashLink>
             </li>
             <li>
-              <HashLink to="/Education" className="navItem third">
+              <HashLink to="/Portfolio/Education" className="navItem third">
                 Education
               </HashLink>
             </li>
             <li>
-              <HashLink to="/About" className="navItem fourth">
+              <HashLink to="/Portfolio/About" className="navItem fourth">
                 About
               </HashLink>
             </li>
             <li>
-              <HashLink to="/Contact" className="navItem fifth">
+              <HashLink to="/Portfolio/Contact" className="navItem fifth">
                 Contact
               </HashLink>
             </li>

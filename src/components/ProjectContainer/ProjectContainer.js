@@ -94,9 +94,9 @@ export default function ProjectContainer() {
   
   const [tab, setTab] = useState(1);
 
-  useEffect(() => {
-    console.log(DevelopmentCards)
-  }, [])
+  // useEffect(() => {
+  //   console.log(DevelopmentCards)
+  // }, [])
   const projectContainer = () => {
     switch (tab) {
       case 1:

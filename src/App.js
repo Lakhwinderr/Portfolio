@@ -12,11 +12,11 @@ function App() {
     <div>
       <ProjectProvider>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/Education" element={<Education />}></Route>
-          <Route path="/About" element={<About />}></Route>
-          <Route path="/Contact" element={<Contact />}></Route>
-          <Route path="/Work" element={<Work />}></Route>
+          <Route path="/Portfolio" element={<Home />}></Route>
+          <Route path="/Portfolio/Education" element={<Education />}></Route>
+          <Route path="/Portfolio/About" element={<About />}></Route>
+          <Route path="/Portfolio/Contact" element={<Contact />}></Route>
+          <Route path="/Portfolio/Work" element={<Work />}></Route>
         </Routes>
         <ScrollToTop />
       </ProjectProvider>

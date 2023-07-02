@@ -14,27 +14,27 @@ export default function Footer() {
           <li
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-              navigate("/");
+              navigate("/Portfolio");
             }}
           >
             Home
           </li>
           <li
             onClick={() => {
-              navigate("/About");
+              navigate("/Portfolio/About");
             }}
           >
             About
           </li>
           <li
             onClick={() => {
-              navigate("/Contact");
+              navigate("/Portfolio/Contact");
             }}
           >
             Contact
           </li>
           <li>
-            <HashLink smooth to="/#work" className="backButton">
+            <HashLink smooth to="/Portfolio/#work" className="backButton">
               Work
             </HashLink>
           </li>
