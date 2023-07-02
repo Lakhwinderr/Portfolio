@@ -2,10 +2,14 @@ import React from "react";
 import './Hero.css'
 import vector from "../../assets/Vector 1.png";
 import me from "../../assets/Untitled design 1.png";
+import me2 from "../../assets/mobile.png";
+import banner from "../../assets/mobile2.png";
 const Image = () =>{
     return <div className="imageHolder">
-    <img id = "img1" src={vector} alt="" />
-    <img id = "img2" src={me} alt="" />
+    {/* <img id = "img1" src={vector} alt="" />
+    <img id = "img2" src={me} alt="" /> */}
+    <img id = "img3" src={banner} alt="" />
+    <img id = "img4" src={me2} alt="" />
   </div>
 }
 const Text = () =>{

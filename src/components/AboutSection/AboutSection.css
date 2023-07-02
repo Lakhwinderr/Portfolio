@@ -1,7 +1,8 @@
 .aboutCardContainer{
     /* position: absolute; */
-    width: 60%;
+   
     left: 0; 
+    padding: 0 20px;
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
@@ -53,5 +54,13 @@ color: #5C5C5C;
     /* width:85%; */
     transform: scale(1.02);
     transition: 1s;
+}
+
+@media only screen and (min-width: 768px){
+    .aboutCardContainer{width: 80%;}
+}
+
+@media only screen and (min-width: 1000px){
+    .aboutCardContainer{width: 70%;}
 }
 

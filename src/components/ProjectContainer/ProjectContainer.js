@@ -3,6 +3,7 @@ import "./ProjectContainer.css";
 import ToggleButton from "../ToggleButton/ToggleButton";
 import project1 from "../../assets/project1.jpg";
 import project2 from "../../assets/project2.jpg";
+import project3 from "../../assets/project3.jpg";
 import dproject1 from "../../assets/dproject1.jpg";
 import dproject2 from "../../assets/dproject2.jpg";
 import dproject3 from "../../assets/dproject3.jpg";
@@ -22,6 +23,8 @@ import ll3 from "../../assets/Dev/3.jpeg"
 import ll4 from "../../assets/Dev/4.jpeg"
 import ll5 from "../../assets/Dev/5.jpeg"
 import ls1 from "../../assets/Dev/11.jpeg"
+import sg1 from "../../assets/Dev/12.jpeg"
+
 
 export default function ProjectContainer() {
   const dprojecta1 = [img1, img2, img3];
@@ -31,6 +34,7 @@ export default function ProjectContainer() {
 
   const devProject1 = [ll1, ll2,ll3, ll4, ll5];
   const devProject2 = [ls1]
+  const devProject3 = [sg1]
 
   const Development = [
     {
@@ -49,6 +53,14 @@ export default function ProjectContainer() {
       array: devProject2,
       link:"https://lakhwinderr.github.io/Lucky-Shrubs-Portfolio-Project/"
       },
+    {
+      img: project3,
+      title: "Snake Game",
+      description:
+        "Snake Game build using HTML, CSS and JavaScript.",
+      array: devProject3,
+      link:"https://lakhwinderr.github.io/SnakeGame2/"
+      }
   ];
 
   const Design = [

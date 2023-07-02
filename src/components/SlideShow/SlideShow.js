@@ -83,7 +83,7 @@ export default function SlideShow({ item }) {
             &#10095;
           </div>
         </div>
-        {item.link ? <a href={item.link} target="_blank">View Live</a>:null}
+        {item.link ? <a href={item.link} target="_blank">View Live</a>:<div style={{width: "50px"}}></div>}
       </div>
 
       <div className="dotAndImage">

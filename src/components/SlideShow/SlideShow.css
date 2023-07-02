@@ -43,7 +43,7 @@
   margin-top: 50px;
   width: 200px;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
@@ -89,11 +89,11 @@
 }
 .dots {
   margin-top: 0px;
-  position: absolute;
-  left: 0;
-  right: 0;
+  /* position: absolute; */
+
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 }
 .active,
 .dot:hover {

@@ -15,7 +15,8 @@ font-size: 52px;
 }
 
 .work{
-    height: 900px;
+    height: fit-content;
+    margin-bottom: 20px;
 }
 .secondBar{
     display: flex;
@@ -51,3 +52,5 @@ font-size: 52px;
     text-align: center;
     margin: auto;
 }
+
+
