@@ -1,6 +1,6 @@
 .card{
     /* position: relative; */
-    /* width: 450px; */
+    width: 450px;
     height: 260px;
     margin: 20px;
     background-color: rgba(0, 0, 0, 0.281);
@@ -8,6 +8,8 @@
     grid-template-rows: repeat(4,1fr);
     grid-template-columns: repeat(5,1fr);
     border-radius: 4px;
+   
+    
 }
 .backGroundImg{
     grid-row:1/-1;
@@ -24,13 +26,6 @@
     
 }
 .onHover{
-    /* position:absolute; */
-    grid-row: 1/-2;
-    grid-column: 1/-1;
-    /* background-color: brown; */
-    display: none;
-}
-.card:hover .onHover{
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.623);
     color: white;
@@ -42,7 +37,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 1s ease-in;
 }
 
 .card h1, .card p{
@@ -56,11 +50,33 @@
     100% { opacity: 1; }
   }
 
-  @media  only screen and (min-width: 768px) {
+  @media  only screen and (min-width: 500px) {
     .card{
         /* position: relative; */
         width: 450px;
         margin: 40px;
         
     }
+    .onHover{
+        /* position:absolute; */
+        grid-row: 1/-2;
+        grid-column: 1/-1;
+        /* background-color: brown; */
+        display: none;
+    }
+    .card:hover .onHover{
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.623);
+        color: white;
+        grid-row: 1/-2;
+        grid-column: 1/-1;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 1s ease-in;
+    }
+    
   }
