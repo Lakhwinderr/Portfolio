@@ -105,12 +105,6 @@ export default function ProjectContainer() {
       array: dprojecta2,
     },
     {
-      img: dproject3,
-      title: "Image Cropping",
-      description: "Image Cropping and Toning",
-      array: dprojecta3,
-    },
-    {
       img: dproject4,
       title: "Paper Friends Book Cover",
       description: "Origami Book Cover designed in Adobe Photoshop",
