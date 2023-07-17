@@ -51,14 +51,14 @@ export default function ProjectContainer() {
       array: devProject1,
       link: "https://lakhwinderr.github.io/little-lemon/"
       },
-      {
-        img: project3,
-        title: "Snake Game",
-        description:
-          "Snake Game build using HTML, CSS and JavaScript.",
-        array: devProject3,
-        link:"https://lakhwinderr.github.io/SnakeGame2/"
-        },
+      // {
+      //   img: project3,
+      //   title: "Snake Game",
+      //   description:
+      //     "Snake Game build using HTML, CSS and JavaScript.",
+      //   array: devProject3,
+      //   link:"https://lakhwinderr.github.io/SnakeGame2/"
+      //   },
         {
           img: dproject1,
           title: "Team Website",
