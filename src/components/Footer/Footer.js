@@ -46,7 +46,7 @@ export default function Footer() {
           <a href="https://github.com/Lakhwinderr"  target="_blank">
             <img src={gitHub} alt="" />
           </a>
-          <a href="https://devpost.com/lakhwinder-sidhuu20?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"  target="_blank">
+          <a href="https://devpost.com/lakhwinderr"  target="_blank">
             <img src={devPost} alt="" />
           </a>
         </div>

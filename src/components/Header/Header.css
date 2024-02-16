@@ -9,6 +9,9 @@ header ul{
     background-color: white;
     
 }
+.mobile{
+    background-color: white;
+}
 .desktop{
     display: none;
 }
