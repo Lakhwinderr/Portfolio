@@ -2,7 +2,7 @@
 
 Fill this in **while** you work. Capture searches, surprises, and decisions.
 
-Definitions: [glossary](learning/glossary.md) · [Import graph](learning/glossary.md#import-graph) · [Safe deletion](learning/glossary.md#safe-deletion) · [Verification](learning/glossary.md#verification) · [Leftover configuration](learning/glossary.md#leftover-configuration)
+Definitions: [glossary](../glossary.md) · [Import graph](../glossary.md#import-graph) · [Safe deletion](../glossary.md#safe-deletion) · [Verification](../glossary.md#verification) · [Leftover configuration](../glossary.md#leftover-configuration)
 
 ## Date started
 
@@ -18,12 +18,12 @@ Definitions: [glossary](learning/glossary.md) · [Import graph](learning/glossar
 
 | Item | Referenced? | Decision | Notes |
 | --- | --- | --- | --- |
-| `WorkDesign.js` | | | [Dead code](learning/glossary.md#dead-code) / [build hazard](learning/glossary.md#build-hazard) |
-| `project3.jpg` / `dproject3.jpg` | | | [Unused asset](learning/glossary.md#unused-asset) / [static import](learning/glossary.md#static-import) |
-| Firebase (`.firebaserc`, `firebase.json`) | | | [Firebase](learning/glossary.md#firebase) / leftover [configuration](learning/glossary.md#configuration) |
-| [Unused imports](learning/glossary.md#unused-import) (`Work.js`, `Card.js`, `ContactForm.js`) | | | |
-| Unused CSS (`.barTop`, `.bar` / `.secondBar`, slideshow classes) | | | [Duplicate CSS](learning/glossary.md#duplicate-css) / [dead code](learning/glossary.md#dead-code) |
-| [Commented-out](learning/glossary.md#commented-out-code) `BackGround` in `Home.js` | | | |
+| `WorkDesign.js` | | | [Dead code](../glossary.md#dead-code) / [build hazard](../glossary.md#build-hazard) |
+| `project3.jpg` / `dproject3.jpg` | | | [Unused asset](../glossary.md#unused-asset) / [static import](../glossary.md#static-import) |
+| Firebase (`.firebaserc`, `firebase.json`) | | | [Firebase](../glossary.md#firebase) / leftover [configuration](../glossary.md#configuration) |
+| [Unused imports](../glossary.md#unused-import) (`Work.js`, `Card.js`, `ContactForm.js`) | | | |
+| Unused CSS (`.barTop`, `.bar` / `.secondBar`, slideshow classes) | | | [Duplicate CSS](../glossary.md#duplicate-css) / [dead code](../glossary.md#dead-code) |
+| [Commented-out](../glossary.md#commented-out-code) `BackGround` in `Home.js` | | | |
 | Other (add rows) | | | |
 
 ## Decisions (keep vs delete)
@@ -32,7 +32,7 @@ Definitions: [glossary](learning/glossary.md) · [Import graph](learning/glossar
 
 ## Commands I ran
 
-<!-- e.g. search, [build](learning/glossary.md#build), start, test -->
+<!-- e.g. search, [build](../glossary.md#build), start, test -->
 
 -
 
