@@ -20,7 +20,6 @@ export default function Header() {
   return (
     <header>
       <div className="mobile">
-        <div className="barTop"></div>
         <div
           className="burgerMenu"
           onClick={() => {
@@ -62,8 +61,6 @@ export default function Header() {
         </nav>
       </div>
       <div className="desktop">
-        <div className="barTop"></div>
-
         <nav>
           <ul>
             <li>

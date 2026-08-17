@@ -1,82 +1,208 @@
-.card{
-    /* position: relative; */
-    width: 450px;
-    height: 260px;
-    margin: 20px;
-    background-color: rgba(0, 0, 0, 0.281);
-    display: grid;
-    grid-template-rows: repeat(4,1fr);
-    grid-template-columns: repeat(5,1fr);
-    border-radius: 4px;
-   
-    
-}
-.backGroundImg{
-    grid-row:1/-1;
-    grid-column: 1/-1;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    /* animation: fadeIn 1s ease-in; */
-}
-.backGroundImg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    
-}
-.onHover{
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.623);
-    color: white;
-    grid-row: 1/-2;
-    grid-column: 1/-1;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.projectCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  align-content: start;
+  align-self: start;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  min-width: 0;
 }
 
-.card h1, .card p{
-    margin:0;
+.projectCardMedia {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f3f3f3;
 }
-.card p{
-    padding: 20px;
-}
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
 
-  @media  only screen and (min-width: 500px) {
-    .card{
-        /* position: relative; */
-        width: 450px;
-        margin: 40px;
-        
-    }
-    .onHover{
-        /* position:absolute; */
-        grid-row: 1/-2;
-        grid-column: 1/-1;
-        /* background-color: brown; */
-        display: none;
-    }
-    .card:hover .onHover{
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.623);
-        color: white;
-        grid-row: 1/-2;
-        grid-column: 1/-1;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: fadeIn 1s ease-in;
-    }
-    
+.projectCardMedia img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.projectCardNav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.projectCardNavPrev {
+  left: 0;
+}
+
+.projectCardNavNext {
+  right: 0;
+}
+
+.projectCardNav:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: -4px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.projectCardDots {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.projectCardDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.projectCardDot.isActive {
+  background: #f29a16;
+  box-shadow: none;
+}
+
+.projectCardBody {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 18px;
+  min-width: 0;
+}
+
+.projectCardCategory {
+  margin: 0 0 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+
+.projectCardTitle {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #111;
+}
+
+.projectCardDescriptionToggle {
+  align-self: flex-start;
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #8a6a4a;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.projectCardDescriptionToggle:hover {
+  color: #6e5238;
+}
+
+.projectCardDescriptionToggle:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+.projectCardDescription {
+  margin: 10px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5c5c5c;
+}
+
+.projectCardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.projectCardCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+}
+
+.projectCardCta:hover {
+  background: #333;
+}
+
+.projectCardGithub {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #d0d0d0;
+}
+
+.projectCardGithub img {
+  width: 18px;
+  height: 18px;
+}
+
+.projectCardCta:focus-visible,
+.projectCardGithub:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectCardCta {
+    transition: none;
   }
+}
