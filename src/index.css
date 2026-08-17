@@ -31,8 +31,8 @@
   --color-bg: #0a0a0a;
   --color-text: #f3f3f3;
   --color-text-muted: #a8a8a8;
-  --color-border: #2a2a2a;
-  --color-border-strong: #3a3a3a;
+  --color-border: #404040;
+  --color-border-strong: #525252;
   --color-surface: #141414;
   --color-surface-muted: #1a1a1a;
   --color-input-bg: #141414;
@@ -44,7 +44,7 @@
   --color-disabled-bg: #2a2a2a;
   --color-disabled-text: #6e6e6e;
   --color-card-shadow: rgba(0, 0, 0, 0.35);
-  --color-tab-border: #2a2a2a;
+  --color-tab-border: #404040;
   --color-category: #8a8a8a;
   --color-link-muted: #c9a06a;
   --color-link-muted-hover: #e0b87a;
