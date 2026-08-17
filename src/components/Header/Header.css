@@ -1,127 +1,158 @@
-header ul{
-    z-index: 1;
+.siteHeader {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 24px;
+  border-bottom: 4px solid #f29a16;
+  background: #111;
+  color: #f3f3f3;
+}
+
+.siteHeaderInner {
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.siteHeader a {
+  all: unset;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mobile {
+  background: transparent;
+}
+
+.mobileBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.desktop {
+  display: none;
+}
+
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 8px 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slice {
+  width: 22px;
+  height: 2px;
+  margin: 3px 0;
+  background-color: #f3f3f3;
+}
+
+.active {
+  display: none;
+}
+
+.siteHeader ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 12px 0 4px;
+  list-style: none;
+}
+
+.siteHeader li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navItem {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #f3f3f3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.siteHeader .navItem {
+  font-weight: 600;
+}
+
+.navItem:hover {
+  color: #f29a16;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.navItem:focus-visible {
+  outline: 2px solid #f29a16;
+  outline-offset: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+  .siteHeader {
+    padding: 0 48px;
+  }
+
+  .siteHeaderInner {
+    padding: 16px 0;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
     display: flex;
-    flex-direction: column;
-    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .desktopNav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
     padding: 0;
-    /* justify-content: center; */
-    align-items: flex-end;
-    background-color: white;
-    
-}
-.mobile{
-    background-color: white;
-}
-.desktop{
-    display: none;
-}
-.burgerMenu{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 30px;
-    margin-top: 10px;
-    background-color: white;
-
-}
-.active{
-    display: none;
-}
-.slice{
-    margin: 5px 0px;
-    width: 50px;
-    background-color: black;
-    height: 5px;
-}
-
-header li{
     list-style: none;
-    margin: 7px 0px;
-    padding:1px 10px;
-}
+  }
 
-.navItem{
-    font-size: 30px;
-    font-weight: 520;
-    text-decoration: none;
-    margin: 10px 10px;
-    padding:1px 10px;
-    /* z-index: 10; */
-}
+  .burgerMenu {
+    display: none;
+  }
 
-header li:hover{
-    transform: none;
-}
-.navItem:hover{
-    cursor: pointer;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
-}
+  .siteHeader ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0;
+  }
 
-header{
-    width:100vw;
-    position: absolute;
-    z-index: 10;
-    top: 0px;
-}
+  .siteHeader .desktopNav ul {
+    padding: 0;
+  }
 
-a{
-    all:unset;
-}
-
-/* desktop */
-@media only screen and (min-width: 768px){
-    .mobile{
-        display: none;
-    }
-    .desktop{
-        display: block;
-    }
-    header ul{
-        all:unset;
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-        padding: 8px 0 0;
-        justify-content: center;
-        
-    }
-    
-    .burgerMenu{
-        display: none;
-    }
-    header li{
-        list-style: none;
-        margin: 7px 0px;
-        padding:1px 10px;
-    }
-    
-    .navItem{
-        font-size: medium;
-        font-weight: 520;
-        text-decoration: none;
-        margin: 10px 10px;
-        padding:1px 10px;
-        /* z-index: 10; */
-    }
-    
-    header li:hover{
-        transform: none;
-    }
-    .navItem:hover{
-        cursor: pointer;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
-    }
-    
-    header{
-        width:100vw;
-        position: absolute;
-        z-index: 10;
-        top: 0px;
-    }
-    
-    a{
-        all:unset;
-    }
-    
-    
+  .navItem {
+    font-size: 16px;
+    font-weight: 600;
+  }
 }

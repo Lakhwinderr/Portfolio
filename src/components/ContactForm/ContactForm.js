@@ -1,56 +1,41 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./ContactForm.css";
 import { useFormik } from "formik";
-
 import emailjs from "@emailjs/browser";
+
 export default function ContactForm() {
   const form = useRef();
-  const sendEmail = () => {
+  const [status, setStatus] = useState("idle");
 
-    emailjs
-      .sendForm(
-        "service_729iroo",
-        "template_tburxbh",
-        form.current,
-        "1iv3kJd6txueSQc94"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
   const validate = (values) => {
     const errors = {};
     if (!values.name) {
-      errors.name = "Required";
+      errors.name = "Enter your name.";
     } else if (values.name.length > 25) {
-      errors.name = "Name must be less than 25 characters.";
+      errors.name = "Name must be 25 characters or fewer.";
     }
 
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = "Enter your email address.";
     } else if (
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
-      errors.email = "Invalid email address";
+      errors.email = "Enter a valid email address.";
     }
+
     if (
       values.phoneNumber &&
-      !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(
+      !/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im.test(
         values.phoneNumber
       )
     ) {
-      errors.phoneNumber = "Invalid phone number";
+      errors.phoneNumber = "Enter a valid phone number.";
     }
 
     if (!values.request) {
-      errors.request = "Required";
-    } else if (values.request.split(" ").length > 500) {
-      errors.request = "Minimum 500 characters.";
+      errors.request = "Enter a message.";
+    } else if (values.request.trim().split(/\s+/).length > 500) {
+      errors.request = "Message must be 500 words or fewer.";
     }
 
     return errors;
@@ -64,75 +49,134 @@ export default function ContactForm() {
       request: "",
     },
     validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      sendEmail();
+    onSubmit: (values, helpers) => {
+      setStatus("sending");
+      emailjs
+        .sendForm(
+          "service_729iroo",
+          "template_tburxbh",
+          form.current,
+          "1iv3kJd6txueSQc94"
+        )
+        .then(
+          () => {
+            setStatus("success");
+            helpers.resetForm();
+          },
+          () => {
+            setStatus("error");
+          }
+        )
+        .finally(() => {
+          helpers.setSubmitting(false);
+        });
     },
   });
 
-  const valid = () => {
-    if (
-      formik.values.name &&
-      formik.values.email &&
-      formik.values.request &&
-      Object.keys(formik.errors).length === 0
-    ) {
-      return true;
-    }
-    return false;
-  };
+  const showError = (field) =>
+    formik.errors[field] && (formik.touched[field] || formik.submitCount > 0);
+
   return (
-    <div className="contactForm">
-      <form onSubmit={formik.handleSubmit} ref={form}>
-        <div className="formElement">
-          <input
-            placeholder="Name"
-            type="text"
-            id="name"
-            {...formik.getFieldProps("name")}
-          />
-          {formik.errors.name && formik.touched.name ? (
-            <div className="error">{formik.errors.name}</div>
-          ) : null}
+    <section className="contact" aria-labelledby="contact-heading">
+      <div className="contactInner">
+        <h1 id="contact-heading" className="contactHeading">
+          Contact
+        </h1>
+        <div className="contactPanel">
+          <h2>Message</h2>
+          <p className="contactLead">
+            Send a note using the form below. I read every message.
+          </p>
+        <form
+          className="contactForm"
+          onSubmit={formik.handleSubmit}
+          ref={form}
+          noValidate
+        >
+          <div className="contactField">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              autoComplete="name"
+              aria-invalid={showError("name") ? "true" : "false"}
+              aria-describedby={showError("name") ? "name-error" : undefined}
+              {...formik.getFieldProps("name")}
+            />
+            {showError("name") ? (
+              <p id="name-error" className="contactError" role="alert">
+                {formik.errors.name}
+              </p>
+            ) : null}
+          </div>
+          <div className="contactField">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              autoComplete="email"
+              aria-invalid={showError("email") ? "true" : "false"}
+              aria-describedby={showError("email") ? "email-error" : undefined}
+              {...formik.getFieldProps("email")}
+            />
+            {showError("email") ? (
+              <p id="email-error" className="contactError" role="alert">
+                {formik.errors.email}
+              </p>
+            ) : null}
+          </div>
+          <div className="contactField">
+            <label htmlFor="phoneNumber">Phone (optional)</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              autoComplete="tel"
+              aria-invalid={showError("phoneNumber") ? "true" : "false"}
+              aria-describedby={
+                showError("phoneNumber") ? "phone-error" : undefined
+              }
+              {...formik.getFieldProps("phoneNumber")}
+            />
+            {showError("phoneNumber") ? (
+              <p id="phone-error" className="contactError" role="alert">
+                {formik.errors.phoneNumber}
+              </p>
+            ) : null}
+          </div>
+          <div className="contactField">
+            <label htmlFor="request">Message</label>
+            <textarea
+              id="request"
+              rows="8"
+              aria-invalid={showError("request") ? "true" : "false"}
+              aria-describedby={
+                showError("request") ? "request-error" : undefined
+              }
+              {...formik.getFieldProps("request")}
+            />
+            {showError("request") ? (
+              <p id="request-error" className="contactError" role="alert">
+                {formik.errors.request}
+              </p>
+            ) : null}
+          </div>
+          <button
+            className="contactSubmit"
+            type="submit"
+            disabled={formik.isSubmitting || status === "sending"}
+          >
+            {status === "sending" ? "Sending…" : "Submit"}
+          </button>
+          <p className="contactStatus" role="status" aria-live="polite">
+            {status === "success"
+              ? "Message sent."
+              : status === "error"
+                ? "Message could not be sent. Try again."
+                : ""}
+          </p>
+        </form>
         </div>
-        <div className="formElement">
-          <input
-            placeholder="Email"
-            type="email"
-            id="email"
-            {...formik.getFieldProps("email")}
-          />
-          {formik.errors.email && formik.touched.email ? (
-            <div className="error">{formik.errors.email}</div>
-          ) : null}
-        </div>
-        <div className="formElement">
-          <input
-            placeholder="Phone(optional)"
-            type="tel"
-            id="phoneNumber"
-            {...formik.getFieldProps("phoneNumber")}
-          />
-          {formik.errors.phoneNumber && formik.touched.phoneNumber ? (
-            <div className="error">{formik.errors.phoneNumber}</div>
-          ) : null}
-        </div>
-        <div className="formElement">
-          <textarea
-            placeholder="Request"
-            id="request"
-            cols="30"
-            rows="10"
-            {...formik.getFieldProps("request")}
-          ></textarea>
-          {formik.errors.request && formik.touched.request ? (
-            <div className="error">{formik.errors.request}</div>
-          ) : null}
-        </div>
-        <button className="button" type="submit" disabled={!valid()}>
-          Submit
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 }

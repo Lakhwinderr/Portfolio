@@ -19,30 +19,11 @@ export default function SlideShow({ item, onClose }) {
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = zoomed ? "auto" : "hidden";
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, []);
-
-  useEffect(() => {
-    const onKeyDown = (event) => {
-      if (event.key !== "Escape") {
-        return;
-      }
-      if (zoomed) {
-        setZoomed(false);
-        return;
-      }
-      onClose();
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [onClose, zoomed]);
-
-  if (images.length === 0) {
-    return null;
-  }
+  }, [zoomed]);
 
   const showPrevious = () => {
     setCurrent((index) => (index === 0 ? images.length - 1 : index - 1));
@@ -51,6 +32,34 @@ export default function SlideShow({ item, onClose }) {
   const showNext = () => {
     setCurrent((index) => (index === images.length - 1 ? 0 : index + 1));
   };
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        if (zoomed) {
+          setZoomed(false);
+          return;
+        }
+        onClose();
+        return;
+      }
+      if (!hasGallery) {
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [hasGallery, onClose, zoomed]);
+
+  if (images.length === 0) {
+    return null;
+  }
 
   return (
     <div className={zoomed ? "projectViewer isZoomed" : "projectViewer"}>
@@ -87,7 +96,7 @@ export default function SlideShow({ item, onClose }) {
             </button>
           )}
         </div>
-        {hasGallery && !zoomed ? (
+        {hasGallery ? (
           <>
             <button
               type="button"
@@ -98,6 +107,18 @@ export default function SlideShow({ item, onClose }) {
             <button
               type="button"
               className="projectViewerNav projectViewerNavNext"
+              aria-label="Next image"
+              onClick={showNext}
+            />
+            <button
+              type="button"
+              className="projectViewerArrow projectViewerArrowPrev"
+              aria-label="Previous image"
+              onClick={showPrevious}
+            />
+            <button
+              type="button"
+              className="projectViewerArrow projectViewerArrowNext"
               aria-label="Next image"
               onClick={showNext}
             />

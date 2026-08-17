@@ -1,19 +1,28 @@
 import React from "react";
 import "./EducationCard.css";
-export default function EducationCard({data}) {
-  const cards = data.map(education => {
-   return <div className="educationCard">
+
+export default function EducationCard({ data }) {
+  const cards = data.map((education) => {
+    return (
+      <article className="educationCard" key={education.title}>
         <h2>{education.title}</h2>
-        <p>
-          {education.description}
-        </p>
-        <a href={education.link} target="_blank">View Certification</a>
-      </div>
-  })
+        <p>{education.description}</p>
+        <a className="educationCardLink" href={education.link}>
+          View Certification
+          <span className="visuallyHidden"> for {education.title}</span>
+        </a>
+      </article>
+    );
+  });
+
   return (
-    <div className="educationCardContainer">
-      
-     {cards}
-    </div>
+    <section className="education" aria-labelledby="education-heading">
+      <div className="educationInner">
+        <h1 id="education-heading" className="educationHeading">
+          Education
+        </h1>
+        {cards}
+      </div>
+    </section>
   );
 }

@@ -1,0 +1,31 @@
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+
+.themeToggle:hover {
+  border-color: #f29a16;
+  color: #f29a16;
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid #f29a16;
+  outline-offset: 3px;
+}
+
+.themeToggleIcon {
+  font-size: 15px;
+  line-height: 1;
+}

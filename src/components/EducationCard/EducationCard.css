@@ -1,76 +1,102 @@
-.educationCardContainer{
-    /* position: absolute; */
-    padding: 0 20px;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    /* margin: 0; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+.education {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 104px 24px 80px;
 }
 
-.educationCard{
-    background: #FFFFFF;
-/* base */
-
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
-/* border-radius: 4px; */
-
-    border-radius: 4px;
-    margin: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 30px;
-    /* height: 140px; */
-    /* background-color: rgb(231, 225, 225); */
+.educationInner {
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.educationCard h2{
-    margin: 0;
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
+.educationHeading {
+  margin: 0 0 32px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--color-text);
 }
 
-.educationCard p{
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 150%;
-/* or 36px */
-
-
-color: #5C5C5C;
-
+.educationCard {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 48px 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
-.educationCard a{
-    color: black;
+.educationCard:last-child {
+  padding-bottom: 0;
 }
 
-.educationCard a:hover{
-    text-decoration: underline;
-    cursor: pointer;
+.educationCard h2 {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-text);
 }
 
-.educationCard:hover{
-    transform: scale(1.02);
-    transition: 1s;
+.educationCard p {
+  margin: 12px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
 }
 
-.educationCard:not(:hover){
-    transform: scale(1);
-    transition: 1s;
+.educationCardLink {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
 }
 
-@media only screen and (min-width: 768px){
-    .educationCardContainer{width: 80%;}
+.educationCardLink:hover {
+  color: var(--color-accent-text);
 }
-@media only screen and (min-width: 1000px){
-    .educationCardContainer{width: 70%;}
+
+.educationCardLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.education .visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .education {
+    padding: 112px 48px 96px;
+  }
+
+  .educationHeading {
+    font-size: 52px;
+  }
 }
