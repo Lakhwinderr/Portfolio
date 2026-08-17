@@ -1,14 +1,48 @@
-.work{
-    height: fit-content;
-    margin-bottom: 20px;
+.work {
+  box-sizing: border-box;
+  padding: 24px 24px 80px;
+  margin-bottom: 0;
 }
 
-.workText{
-    padding-top: 20px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
+.workInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.workIntro {
+  max-width: none;
+  padding-left: 0;
+  border-left: none;
+}
+
+.workHeading {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #111;
+}
+
+.workLead {
+  margin: 16px 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #5c5c5c;
+}
+
+@media only screen and (min-width: 768px) {
+  .work {
+    padding: 8px 48px 96px;
+  }
+
+  .workHeading {
     font-size: 52px;
-    text-align: center;
-    margin: auto;
+  }
+
+  .workLead {
+    font-size: 20px;
+  }
 }

@@ -50,31 +50,11 @@ header li{
 }
 
 header li:hover{
-    transform: scale(1.2);
+    transform: none;
 }
 .navItem:hover{
-    
     cursor: pointer;
-    text-align: center;
-    border-radius: 8px;
-    
-} 
-
-.first:hover{
-    background-color: rgba(255, 166, 0, 0.616);
-}
-
-.second:hover{
-    background-color: #d6135457 ;
-}
-.third:hover{
-    background-color:#f9482988;
-}
-.fourth:hover{
-    background-color: #fce32ad3;
-}
-.fifth:hover{
-    background-color: #30e3e06c;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
 }
 
 header{
@@ -101,7 +81,7 @@ a{
         display: flex;
         flex-wrap: wrap;
         margin: auto;
-        padding: 0;
+        padding: 8px 0 0;
         justify-content: center;
         
     }
@@ -125,31 +105,11 @@ a{
     }
     
     header li:hover{
-        transform: scale(1.2);
+        transform: none;
     }
     .navItem:hover{
-        
         cursor: pointer;
-        text-align: center;
-        border-radius: 8px;
-        
-    } 
-    
-    .first:hover{
-        background-color: rgba(255, 166, 0, 0.616);
-    }
-    
-    .second:hover{
-        background-color: #d6135457 ;
-    }
-    .third:hover{
-        background-color:#f9482988;
-    }
-    .fourth:hover{
-        background-color: #fce32ad3;
-    }
-    .fifth:hover{
-        background-color: #30e3e06c;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
     }
     
     header{

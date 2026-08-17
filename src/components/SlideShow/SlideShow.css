@@ -1,110 +1,240 @@
-* {
+.projectViewer {
   box-sizing: border-box;
-}
-.holder {
-  height: 100vh;
-  text-align: center;
-}
-.holder img {
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 50px;
-  border-radius: 4px;
-}
-
-/* Hide the images by default */
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-
-  background-color: rgba(255, 166, 0, 0.658);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-top: -22px;
-  padding: 16px;
-  color: grey;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  user-select: none;
+  overflow: hidden;
+  background: #111;
 }
 
-/* Position the "next button" to the right */
-
-.arrows {
-  display: flex;
-  margin: auto;
-  margin-top: 50px;
-  width: 200px;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  color: white;
-  background-color: brown;
-  border-radius: 50%;
+.projectViewer.isZoomed {
+  display: block;
+  overflow: auto;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  /* cursor: pointer; */
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.dotAndImage {
+.projectViewerStage {
   position: relative;
-}
-.dots {
-  margin-top: 0px;
-  /* position: absolute; */
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-}
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-
-
-.backButton:hover, a:hover{
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.linksAndButton{
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  width: 80%;
-  margin: auto;
+  justify-content: center;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0.4;
+.projectViewer.isZoomed .projectViewerStage {
+  height: auto;
+  min-height: 100%;
+  align-items: flex-start;
+}
+
+.projectViewerFrame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.projectViewer.isZoomed .projectViewerFrame {
+  display: block;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+}
+
+.projectViewerFrame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  object-position: center;
+}
+
+.projectViewer.isZoomed .projectViewerFrame img {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
+
+.projectViewerZoom {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(17, 17, 17, 0);
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: zoom-in;
+  opacity: 0;
+  transition: background 0.35s ease, opacity 0.35s ease;
+}
+
+.projectViewerFrame:hover .projectViewerZoom {
+  background: rgba(17, 17, 17, 0.42);
+  opacity: 1;
+}
+
+.projectViewerZoom:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+  background: rgba(17, 17, 17, 0.42);
+  opacity: 1;
+}
+
+.projectViewerNav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 72px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.projectViewerNavPrev {
+  left: 0;
+}
+
+.projectViewerNavNext {
+  right: 0;
+}
+
+.projectViewerNav:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.projectViewerDots {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.projectViewerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.projectViewerDot.isActive {
+  background: #f29a16;
+  box-shadow: none;
+}
+
+.projectViewerClose,
+.projectViewerExitZoom {
+  position: fixed;
+  z-index: 4;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.projectViewerClose {
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.projectViewerExitZoom {
+  top: 24px;
+  right: 76px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: #fff;
+  color: #111;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.projectViewerClose span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.projectViewerClose span::before,
+.projectViewerClose span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 2px;
+  background: #111;
+}
+
+.projectViewerClose span::before {
+  transform: rotate(45deg);
+}
+
+.projectViewerClose span::after {
+  transform: rotate(-45deg);
+}
+
+.projectViewerClose:hover,
+.projectViewerExitZoom:hover {
+  background: #f3f3f3;
+}
+
+.projectViewerClose:focus-visible,
+.projectViewerExitZoom:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media only screen and (min-width: 768px) {
+  .projectViewerClose {
+    top: 24px;
+    right: 28px;
   }
-  to {
-    opacity: 1;
+
+  .projectViewerExitZoom {
+    right: 84px;
+  }
+
+  .projectViewerNav {
+    width: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectViewerZoom {
+    transition: none;
   }
 }

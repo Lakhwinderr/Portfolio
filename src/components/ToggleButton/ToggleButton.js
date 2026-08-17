@@ -1,26 +1,31 @@
-import React, { useState } from 'react'
-import './ToggleButton.css'
-export default function ToggleButton({tab, setTab}) {
-  // const [tab, setTab] = useState(1);
-  const clickHandler  = () => {
-    if(tab == 1){
-      return setTab(2);
-    }
-    else{
-      return setTab(1);
-    }
-  }
+import React from "react";
+import "./ToggleButton.css";
 
-  const myStyle = {
-    gridColumnStart : `${tab}`
-  }
+export default function ToggleButton({ tab, setTab }) {
   return (
-    <div className="toggle" onClick={clickHandler}>
-        <div className="toggletext">Development</div>
-        <div className="toggletext">Design</div>
-        <div className="holder" style={myStyle}>
-            <div className="togglebar"></div>
-        </div>
+    <div className="workTabs" role="tablist" aria-label="Project type">
+      <button
+        type="button"
+        role="tab"
+        id="work-tab-development"
+        aria-selected={tab === 1}
+        aria-controls="work-panel-development"
+        className={tab === 1 ? "workTab isActive" : "workTab"}
+        onClick={() => setTab(1)}
+      >
+        Development
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="work-tab-design"
+        aria-selected={tab === 2}
+        aria-controls="work-panel-design"
+        className={tab === 2 ? "workTab isActive" : "workTab"}
+        onClick={() => setTab(2)}
+      >
+        Design
+      </button>
     </div>
-  )
+  );
 }

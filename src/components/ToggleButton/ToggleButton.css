@@ -1,20 +1,30 @@
-.toggle{
-    margin: auto;
-    width:210px;
-    height: 30px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    /* margin-bottom: 10px; */
-}
-.toggletext{
-    text-align: center;
-    color: black;
-}
-.togglebar{
-    background-color: orangered;
-    height: 2px;
+.workTabs {
+  display: flex;
+  gap: 28px;
+  margin: 32px 0 0;
+  border-bottom: 1px solid #e6e6e6;
 }
 
-.toggle:hover{
-    cursor: pointer;
+.workTab {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 10px 0 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+}
+
+.workTab.isActive {
+  color: #b8620a;
+  border-bottom-color: #b8620a;
+}
+
+.workTab:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
 }
