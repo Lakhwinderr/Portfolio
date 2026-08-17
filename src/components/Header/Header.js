@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-// import { useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 export default function Header() {
   const [toggle, setToggle] = useState(true);
@@ -18,17 +18,21 @@ export default function Header() {
     };
   });
   return (
-    <header>
+    <header className="siteHeader">
+      <div className="siteHeaderInner">
       <div className="mobile">
-        <div
-          className="burgerMenu"
-          onClick={() => {
-            setToggle((p) => !p);
-          }}
-        >
-          <div className="slice"></div>
-          <div className="slice"></div>
-          <div className="slice"></div>
+        <div className="mobileBar">
+          <div
+            className="burgerMenu"
+            onClick={() => {
+              setToggle((p) => !p);
+            }}
+          >
+            <div className="slice"></div>
+            <div className="slice"></div>
+            <div className="slice"></div>
+          </div>
+          <ThemeToggle />
         </div>
         <nav className={toggle ? "active" : null}>
           <ul ref={ref}>
@@ -61,7 +65,7 @@ export default function Header() {
         </nav>
       </div>
       <div className="desktop">
-        <nav>
+        <nav className="desktopNav" aria-label="Main">
           <ul>
             <li>
               <HashLink to="/Portfolio" className="navItem first">
@@ -90,6 +94,8 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <ThemeToggle />
+      </div>
       </div>
     </header>
   );

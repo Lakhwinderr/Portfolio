@@ -1,13 +1,78 @@
+:root {
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-text-muted: #5c5c5c;
+  --color-border: #ececec;
+  --color-border-strong: #d0d0d0;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3f3f3;
+  --color-input-bg: #ffffff;
+  --color-accent: #f29a16;
+  --color-accent-hover: #f2a516;
+  --color-accent-text: #b8620a;
+  --color-focus: #111111;
+  --color-error: #9b1c1c;
+  --color-disabled-bg: #d8d8d8;
+  --color-disabled-text: #6e6e6e;
+  --color-card-shadow: rgba(0, 0, 0, 0.04);
+  --color-tab-border: #e6e6e6;
+  --color-category: #8a8a8a;
+  --color-link-muted: #8a6a4a;
+  --color-link-muted-hover: #6e5238;
+  --color-cta-bg: #1a1a1a;
+  --color-cta-bg-hover: #333333;
+  --color-cta-text: #ffffff;
+  --color-on-accent: #111111;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0a0a0a;
+  --color-text: #f3f3f3;
+  --color-text-muted: #a8a8a8;
+  --color-border: #2a2a2a;
+  --color-border-strong: #3a3a3a;
+  --color-surface: #141414;
+  --color-surface-muted: #1a1a1a;
+  --color-input-bg: #141414;
+  --color-accent: #f29a16;
+  --color-accent-hover: #f2a516;
+  --color-accent-text: #f29a16;
+  --color-focus: #f29a16;
+  --color-error: #f87171;
+  --color-disabled-bg: #2a2a2a;
+  --color-disabled-text: #6e6e6e;
+  --color-card-shadow: rgba(0, 0, 0, 0.35);
+  --color-tab-border: #2a2a2a;
+  --color-category: #8a8a8a;
+  --color-link-muted: #c9a06a;
+  --color-link-muted-hover: #e0b87a;
+  --color-cta-bg: #f3f3f3;
+  --color-cta-bg-hover: #ffffff;
+  --color-cta-text: #111111;
+  --color-on-accent: #111111;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }

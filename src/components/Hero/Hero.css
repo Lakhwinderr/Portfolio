@@ -1,12 +1,15 @@
 .hero {
-  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: 120px 24px 64px;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: 104px 24px 72px;
 }
 
 .heroInner {
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
   animation: heroEnter 0.6s ease-out;
@@ -19,7 +22,7 @@
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
-  color: #111;
+  color: var(--color-text);
 }
 
 .heroLead {
@@ -28,7 +31,7 @@
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  color: #5c5c5c;
+  color: var(--color-text-muted);
 }
 
 .heroCta {
@@ -36,8 +39,8 @@
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #111;
-  background-color: #f29a16;
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
   border-radius: 4px;
   padding: 12px 20px;
   cursor: pointer;
@@ -45,11 +48,11 @@
 }
 
 .heroCta:hover {
-  background-color: #f2a516;
+  background-color: var(--color-accent-hover);
 }
 
 .heroCta:focus-visible {
-  outline: 2px solid #111;
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -72,7 +75,10 @@
 
 @media only screen and (min-width: 768px) {
   .hero {
-    padding: 120px 48px 80px;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 112px 48px 64px;
   }
 
   .heroTitle {

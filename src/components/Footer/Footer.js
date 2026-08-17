@@ -35,7 +35,7 @@ export default function Footer() {
           <ul>
             <li>
               <a
-                href="https://www.linkedin.com/in/lakhwinder-singh-648982198/"
+                href="https://www.linkedin.com/in/lakhwinderr/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

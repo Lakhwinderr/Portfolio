@@ -34,7 +34,7 @@
 .siteFooterNav a {
   font-family: "Inter", sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.4;
   color: #f3f3f3;
   text-decoration: none;
@@ -43,6 +43,9 @@
 
 .siteFooterNav a:hover {
   color: #f29a16;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 .siteFooterSocial a {

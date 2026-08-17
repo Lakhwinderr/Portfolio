@@ -22,15 +22,16 @@
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
-  color: #111;
+  color: var(--color-text);
 }
 
 .workLead {
   margin: 16px 0 0;
+  scroll-margin-top: 76px;
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  color: #5c5c5c;
+  color: var(--color-text-muted);
 }
 
 @media only screen and (min-width: 768px) {
@@ -44,5 +45,6 @@
 
   .workLead {
     font-size: 20px;
+    scroll-margin-top: 80px;
   }
 }
