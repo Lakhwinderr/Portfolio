@@ -1,46 +1,105 @@
-.footer{
-    height: 230px;
-    background-color: #F29A16;
-    display: flex;
+.siteFooter {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0 24px 40px;
+  border-top: 4px solid #f29a16;
+  background: #111;
+  color: #f3f3f3;
+}
+
+.siteFooterInner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 0 8px;
+}
+
+.siteFooterNav ul,
+.siteFooterSocial ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.siteFooterNav a {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #f3f3f3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.siteFooterNav a:hover {
+  color: #f29a16;
+}
+
+.siteFooterSocial a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #3a3a3a;
+  background: #1a1a1a;
+  cursor: pointer;
+}
+
+.siteFooterSocial img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+.siteFooterSocial a:hover {
+  border-color: #f29a16;
+}
+
+.siteFooterNav a:focus-visible,
+.siteFooterSocial a:focus-visible {
+  outline: 2px solid #f29a16;
+  outline-offset: 3px;
+}
+
+.siteFooter .visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .siteFooter {
+    padding: 0 48px 48px;
+  }
+
+  .siteFooterInner {
+    flex-direction: row;
     align-items: center;
-}
-
-.container{
-    margin: auto;
-    width: 80%;
-    display: flex;
     justify-content: space-between;
-}
+    gap: 24px;
+    padding: 36px 0 12px;
+  }
 
-.container ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-padding: 0;
-margin: 0;
-font-size: 18px;
-}
-
-.container li{
-    padding: 3px;
-}
-
-.container li:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-.socialHandles{
-    display: flex;
-    align-items: flex-start;
-}
-
-.socialHandles img{
-    margin-left: 18px;
-}
-
-.socialHandles img:hover{
-    cursor: pointer;
+  .siteFooterNav a {
+    font-size: 16px;
+  }
 }
