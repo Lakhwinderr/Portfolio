@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import HomeLink from "../HomeLink";
 import "./Footer.css";
 import linkedIn from "../../assets/1.svg";
 import gitHub from "../../assets/2.svg";
 import devPost from "../../assets/devpost.svg";
+import { routes, workSection } from "../../config/paths";
 
 export default function Footer() {
   return (
@@ -13,21 +15,21 @@ export default function Footer() {
         <nav className="siteFooterNav" aria-label="Footer">
           <ul>
             <li>
-              <Link to="/Portfolio">Home</Link>
+              <HomeLink>Home</HomeLink>
             </li>
             <li>
-              <HashLink smooth to="/Portfolio/#work">
+              <HashLink smooth to={workSection}>
                 Work
               </HashLink>
             </li>
             <li>
-              <Link to="/Portfolio/Education">Education</Link>
+              <Link to={routes.education}>Education</Link>
             </li>
             <li>
-              <Link to="/Portfolio/About">About</Link>
+              <Link to={routes.about}>About</Link>
             </li>
             <li>
-              <Link to="/Portfolio/Contact">Contact</Link>
+              <Link to={routes.contact}>Contact</Link>
             </li>
           </ul>
         </nav>

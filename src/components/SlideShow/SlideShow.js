@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./SlideShow.css";
 
 export default function SlideShow({ item, onClose }) {
@@ -25,13 +25,13 @@ export default function SlideShow({ item, onClose }) {
     };
   }, [zoomed]);
 
-  const showPrevious = () => {
+  const showPrevious = useCallback(() => {
     setCurrent((index) => (index === 0 ? images.length - 1 : index - 1));
-  };
+  }, [images.length]);
 
-  const showNext = () => {
+  const showNext = useCallback(() => {
     setCurrent((index) => (index === images.length - 1 ? 0 : index + 1));
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const onKeyDown = (event) => {
@@ -55,7 +55,7 @@ export default function SlideShow({ item, onClose }) {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [hasGallery, onClose, zoomed]);
+  }, [hasGallery, onClose, showNext, showPrevious, zoomed]);
 
   if (images.length === 0) {
     return null;
