@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../config/paths";
+import { scrollToTop } from "../utils/scrollToTop";
 
 export default function HomeLink({ className, onClick, children }) {
   const { pathname, hash } = useLocation();
@@ -16,9 +17,10 @@ export default function HomeLink({ className, onClick, children }) {
 
     if (hash) {
       navigate(routes.home);
+      return;
     }
 
-    window.scrollTo(0, 0);
+    scrollToTop(true);
   };
 
   return (

@@ -1,46 +1,65 @@
-import React from 'react'
+import React from "react";
 import Header from "../Header/Header";
-import EducationCard from '../EducationCard/EducationCard';
+import EducationCard from "../EducationCard/EducationCard";
 import Footer from "../Footer/Footer";
 
+const formalEducation = [
+  {
+    title: "M.Tech in Geological Technology — IIT Roorkee",
+    description:
+      "Studied geology and earth sciences at IIT Roorkee and graduated with first-division results in 2022. During my final year, I developed a strong interest in programming and software development.",
+    link: "https://docs.google.com/document/d/1a0fYuA3aMAwJXSaKfoIj1vpZF-IAc0PDlgmdjkdsaZ0/edit?usp=sharing",
+    linkText: "View document",
+  },
+  {
+    title: "High School Education — Akal Academy",
+    description:
+      "Completed high school with a 10 CGPA. I developed an early interest in science, creativity, and building things, participating in activities such as science fairs and drawing competitions.",
+    link: "https://docs.google.com/document/d/1a0fYuA3aMAwJXSaKfoIj1vpZF-IAc0PDlgmdjkdsaZ0/edit?usp=sharing",
+    linkText: "View document",
+  },
+];
+
+const certifications = [
+  {
+    title: "Front-end Specialization by Meta",
+    description:
+      "Completed all nine courses with excellent performance. The program covered React and modern frontend development concepts, with a strong focus on understanding the fundamentals.",
+    link: "https://www.credly.com/badges/3c642daa-361f-4ecf-95e2-c700fa5bd6da/public_url",
+    linkText: "View Certification for Front-end Specialization by Meta",
+  },
+  {
+    title: "Introduction to User Experience Design",
+    description:
+      "This was my first step toward design. It covered the fundamentals of UI/UX design and introduced concepts that I later applied while learning frontend development.",
+    link: "https://www.coursera.org/account/accomplishments/verify/N334UXLRXX3C?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course",
+    linkText: "View Certification for Introduction to User Experience Design",
+  },
+  {
+    title: "Introduction to Programming with MATLAB",
+    description:
+      "I have been interested in robotics since childhood, so I explored programming concepts through this course. The course was taught by staff from Vanderbilt University.",
+    link: "https://coursera.org/share/e85c5d3b5c048df52c6ba51a4813c252",
+    linkText: "View Certification for Introduction to Programming with MATLAB",
+  },
+  {
+    title: "Python for Data Science — DataQuest.io",
+    description:
+      "I learned Python during college for analyzing geological data, along with libraries commonly used for data analysis. I also gained experience with Jupyter Notebook and Anaconda.",
+    link: "https://app.dataquest.io/verify_cert/DJBKGH86ARXILSK3BE7M/",
+    linkText: "View Certification for Python for Data Science — DataQuest.io",
+  },
+];
+
 export default function Education() {
-  const educationData = [
-    {title : "Front-end Specialization by META",
-description: "Completed all the nine courses with excellent performance. META build the react itself. All the concepts were crystal clear while learning from top staff working at META.",
-link: "https://www.credly.com/badges/3c642daa-361f-4ecf-95e2-c700fa5bd6da/public_url"},
-{
-  title: "Introduction to UI-UX Design by GOOGLE",
-  description: "This was first step towards design. It covered the basics of UI-UX design. I studied important concepts later covered in Frontend Specialization by META.",
-  link: "https://coursera.org/share/73e9b9e79c2d33318d269aed694ce313"
-},
-{
-  title : "Introduction to Programming with MATLAB",
-  description: "I am also interested in robotics a little bit from childhood. So covered the programming concepts here in this course. Course was taught by Vanderbilt University staff.",
-  link: "https://coursera.org/share/e85c5d3b5c048df52c6ba51a4813c252"
-},
-{
-  title: "Python for Data Science -DataQuest.io",
-  description : "Learnt python during college time for analyzing the geological data.Not only python, but other libraries as well. Got to know about Jupyter Notebook and Anaconda libraries.",
-  link: "https://app.dataquest.io/verify_cert/DJBKGH86ARXILSK3BE7M/"
-},
-{
-  title: "MTech in Geological Technology - IIT Roorkee",
-  description: "Studied geology and earth sciences in college. Graduated in first-division in year 2022. Developed interest in programming and development in last year of college.",
-  link: "https://docs.google.com/document/d/1a0fYuA3aMAwJXSaKfoIj1vpZF-IAc0PDlgmdjkdsaZ0/edit?usp=sharing"
-},
-{
-  title: "High School Education - Akal Academy",
-  description: "Cleared high school education with exceptional performance(10 CGPA). Creative and intelligent in high school and showed great interest in innovative stuff whether it was science fair or drawing competition.",
-  link: "https://docs.google.com/document/d/1a0fYuA3aMAwJXSaKfoIj1vpZF-IAc0PDlgmdjkdsaZ0/edit?usp=sharing"
-}
-]
   return (
-    <div >
-      <Header></Header>
-     
-      
-      <EducationCard data = {educationData}></EducationCard>
-      <Footer></Footer>
+    <div>
+      <Header />
+      <EducationCard
+        formalEducation={formalEducation}
+        certifications={certifications}
+      />
+      <Footer />
     </div>
-  )
+  );
 }
