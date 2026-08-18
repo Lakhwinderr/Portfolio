@@ -1,21 +1,23 @@
 import Home from "./components/Pages/Home";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Education from "./components/Pages/Education";
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import { routes } from "./config/paths";
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
-        <Route path="/Portfolio" element={<Home />}></Route>
-        <Route path="/Portfolio/Education" element={<Education />}></Route>
-        <Route path="/Portfolio/About" element={<About />}></Route>
-        <Route path="/Portfolio/Contact" element={<Contact />}></Route>
+        <Route path={routes.home} element={<Home />} />
+        <Route path={routes.education} element={<Education />} />
+        <Route path={routes.about} element={<About />} />
+        <Route path={routes.contact} element={<Contact />} />
+        <Route path="*" element={<Navigate to={routes.home} replace />} />
       </Routes>
       <ScrollToTop />
-    </div>
+    </>
   );
 }
 

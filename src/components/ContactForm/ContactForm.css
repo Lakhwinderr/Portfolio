@@ -157,6 +157,10 @@
   color: var(--color-text-muted);
 }
 
+.contactStatusError {
+  color: var(--color-error);
+}
+
 @media only screen and (min-width: 768px) {
   .contact {
     padding: 112px 48px 96px;

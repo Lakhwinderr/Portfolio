@@ -1,6 +1,7 @@
 import React from "react";
 import { HashLink } from "react-router-hash-link";
 import "./Hero.css";
+import { workSection } from "../../config/paths";
 
 export default function Hero() {
   return (
@@ -13,7 +14,7 @@ export default function Hero() {
           I build practical software and technology projects, and I like turning
           ideas into things people can use.
         </p>
-        <HashLink smooth to="/Portfolio/#work" className="heroCta">
+        <HashLink smooth to={workSection} className="heroCta">
           View my work
         </HashLink>
       </div>

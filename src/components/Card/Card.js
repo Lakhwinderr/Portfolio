@@ -17,7 +17,11 @@ function githubUrlFromPages(link) {
 
 export default function Card({ item, onViewProject }) {
   const images =
-    item.array && item.array.length > 0 ? item.array : [item.img];
+    item.cardArray && item.cardArray.length > 0
+      ? item.cardArray
+      : item.array && item.array.length > 0
+        ? item.array
+        : [item.img];
   const [current, setCurrent] = useState(0);
   const [descriptionOpen, setDescriptionOpen] = useState(false);
   const githubUrl = githubUrlFromPages(item.link);
@@ -44,7 +48,12 @@ export default function Card({ item, onViewProject }) {
   return (
     <article className="projectCard">
       <div className="projectCardMedia">
-        <img src={images[current]} alt="" />
+        <img
+          src={images[current]}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
         {hasGallery ? (
           <>
             <button
