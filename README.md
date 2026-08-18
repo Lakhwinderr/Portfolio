@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Lakhwinder Singh — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio website where I share my software projects, education, and background.
 
-## Available Scripts
+**Live site:** [https://lakhwinderr.github.io/](https://lakhwinderr.github.io/)
 
-In the project directory, you can run:
+## What this project is
 
-### `npm start`
+This is a single-page React application that works as my online portfolio. Visitors can browse my work, read about me, view my education and certifications, and send a message through the contact form.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Main sections
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Section | Route |
+|---------|-------|
+| Home / Work | `/` and `/#work` |
+| About | `/about` |
+| Education | `/education` |
+| Contact | `/contact` |
 
-### `npm test`
+## Technologies used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- HTML
+- CSS
+- React Router
+- Formik
+- EmailJS
+- Git / GitHub
 
-### `npm run build`
+The project was created with [Create React App](https://github.com/facebook/create-react-app) and is deployed as a static site.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A quick guide for anyone new to the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Portfolio/
+├── public/              # Static files (HTML shell, 404 redirect for GitHub Pages)
+├── src/
+│   ├── components/      # UI pieces (Header, Hero, Work, Contact form, etc.)
+│   ├── config/          # Shared settings (routes, EmailJS config)
+│   ├── context/         # Theme (light / dark mode)
+│   ├── assets/          # Images and icons used in the site
+│   ├── App.js           # Route definitions
+│   └── index.js         # App entry point
+├── package.json         # Dependencies and scripts
+└── README.md
+```
 
-### `npm run eject`
+- **`src/components/Pages/`** — One file per page (Home, About, Education, Contact).
+- **`src/components/`** — Reusable sections such as the header, footer, project cards, and contact form.
+- **`src/config/`** — Central place for paths and EmailJS settings.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Local setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Production build
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This creates an optimized `build/` folder with the static files ready for deployment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
 
-### Code Splitting
+This repository holds the **source code** only.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The live site at [https://lakhwinderr.github.io/](https://lakhwinderr.github.io/) is deployed to a separate GitHub repository (`Lakhwinderr.github.io`), which is the GitHub Pages user-site repo for my account. After building locally, production files are published to that repository’s `main` branch.
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Lakhwinder Singh**
